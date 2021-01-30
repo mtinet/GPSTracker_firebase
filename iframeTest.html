@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <iframe id="location"
+    width="600"
+    height="400"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?&key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg&q=37.5337622,126.9247263">
+  </iframe>
+
+  <form name="locationInput">
+  <input type="hidden" id="id" name="id" value="user1"/>
+  <input type="hidden" id="password" name="password" value="myNameis"/>
+  </form>
+  <form method="get" action="https://www.google.com/maps/embed/v1/search?">
+    <p><label>Input Color : <input type="text" name="color"></label></p>
+    <p><input type="submit" value="Submit"></p>
+  </form>
+  <script>
+    document.locationInput.target = "location";
+    document.locationInput.submit();
+  </script>
+</body>
+
+</html>
