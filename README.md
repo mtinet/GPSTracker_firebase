@@ -11,4 +11,4 @@
 your api key 라는 곳을 찾아 자신의 구글 계정을 통해 얻은 google map api key를 넣어줘야 동작함  
 
 ## firebase  
-[firebase, javascript 설명](https://youtu.be/2CtQEXwOPXw)  
+[firebase, javascript 연동 설명 영상](https://youtu.be/2CtQEXwOPXw)  
