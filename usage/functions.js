@@ -92,16 +92,6 @@ rootRef.on('child_changed', snapshot => {
   console.log('child(s)_changed!');
 })
 
-var lat = 0;
-var long = 0;
-
-lat = database.ref('/gpsFirebase/lat').on('value', snapshot => {
-  console.log(snapshot.val());
-})
-long = database.ref('/gpsFirebase/long').on('value', snapshot => {
-  console.log(snapshot.val());
-})
-
 // 자식 노드가  변화될 때마다 콘솔에 표시
 // rootRef.on('value', snapshot => {
 //   console.log('데이터베이스에 이벤트가 발생했습니다.');
