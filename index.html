@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GPS Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="userId">User ID</label><br>
+        <input type="text" name="userId" id = "userId"><br>
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id = "name"><br>
+        <label for="age">Age</label><br>
+        <input type="number" name="age" id = "age"><br>
+        <button id="addBtn" class="btn waves effect waves light">Add</button>
+        <button id="updateBtn" class="btn waves-effect waves-light">Update</button>
+        <button id="removeBtn" class="btn waves-effect red darken-1">Remove</button>
+      </form>
+    </main>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./functions.js"></script>
+  </body>
+</html>
