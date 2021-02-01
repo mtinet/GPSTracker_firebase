@@ -27,3 +27,6 @@ javascript로 firebase를 제어하는 방법 예제
 
 ## firebase  
 [firebase, javascript 연동 설명 영상](https://youtu.be/2CtQEXwOPXw)  
+
+## kakao map api 사용법  
+[링크](https://apis.map.kakao.com/web/sample/multipleMarkerImage/)  
