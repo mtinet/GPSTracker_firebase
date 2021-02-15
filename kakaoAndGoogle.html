@@ -23,6 +23,14 @@
 
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d8ba8a4d1a5f7454f6ff90291f23ae6"></script>
   <script src="./map.js"></script>
-
+  
+  
+  <script>
+    // 구글 지도, 좌표 가져오기
+    var url = "https://www.google.com/maps/embed/v1/search?q=" + lat + "," + long + "&key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg"
+    console.log(url);
+    $('#googleMap').attr('src', url);
+  </script>
+  
 </body>
 </html>
