@@ -14,10 +14,12 @@ function gotData(data) {
   var lat = data.lat;
   var long = data.long;
 
+
   document.getElementById("lat").innerHTML=lat;
   document.getElementById("long").innerHTML=long;
 
-  // 지도, 마커 가져오기
+
+  // 카카오 지도, 마커 가져오기
   var mapContainer = document.getElementById('map'), // 지도를 표시할 div
       mapOption = {
           center: new kakao.maps.LatLng(lat, long), // 지도의 중심좌표
@@ -40,6 +42,12 @@ function gotData(data) {
   // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
   // marker.setMap(null);
 
+
+
+  // 구글 지도, 좌표 가져오기
+    var url = "https://www.google.com/maps/embed/v1/search?q=" + lat + "," + long + "&key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg"
+    console.log(url);
+    $('#googleMap').attr('src', url);
 }
 
 function errData(data) {
