@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg&callback=initMap" defer></script>
+    <style>
+      #map{width: 800px; height: 800px;}
+      html, body{height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script>
+      function initMap() {
+        var ncpark = {lat: 35.2216094, lng: 128.5794441};
+        var map = new google.maps.Map(document.getElementById("map"), {
+          center: ncpark,
+          zoom: 14
+        });
+
+        var marker;
+        marker = new google.maps.Marker({
+          position: ncpark,
+      	  //icon: [URL],
+          map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+        var info = '창원NC파크';
+        google.maps.event.addListener(marker, 'click', function(){
+          infowindow.setContent(info);
+          infowindow.open(map, marker);
+        })
+
+        if(marker){
+          marker.addListener('click', function(){
+            map.setCenter(this.getPosition());
+            map.setZoom(15);
+          })
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
