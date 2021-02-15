@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Simple Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg&callback=initMap" defer></script>
@@ -11,21 +12,46 @@
     </style>
     <script>
       function initMap() {
-        var ncpark = {lat: 35.2216094, lng: 128.5794441};
+        // firebase 데이터 가져오기
+        const database = firebase.database();
+        var locationVal = database.ref('/gpsFirebase')
+        locationVal.on('value', gotData, errData);
+
+        function gotData(data) {
+          var data = data.val();
+          //var keys = Object.keys(data);
+
+          // console.log(data.val());
+          console.log(data.lat);
+          console.log(data.long);
+
+          var lat = data.lat;
+          var long = data.long;
+
+
+          document.getElementById("lat").innerHTML=lat;
+          document.getElementById("long").innerHTML=long;
+
+        var latlong = {}
+        latlong['lat'] = Number(lat);
+        latlong['lng'] = Number(long);
+
+        console.log(latlong);
+
         var map = new google.maps.Map(document.getElementById("map"), {
-          center: ncpark,
-          zoom: 14
+          center: latlong,
+          zoom: 17
         });
 
         var marker;
         marker = new google.maps.Marker({
-          position: ncpark,
+          position: latlong,
       	  //icon: [URL],
           map: map
         });
 
         var infowindow = new google.maps.InfoWindow();
-        var info = '창원NC파크';
+        var info = '우리집';
         google.maps.event.addListener(marker, 'click', function(){
           infowindow.setContent(info);
           infowindow.open(map, marker);
@@ -34,13 +60,28 @@
         if(marker){
           marker.addListener('click', function(){
             map.setCenter(this.getPosition());
-            map.setZoom(15);
+            map.setZoom(17);
           })
+        }
+        }
+
+        function errData(data) {
+          console.log('Error!');
+          console.log(err);
         }
       }
     </script>
   </head>
   <body>
+    <h1> 현재위치를 확인하세요.</h1>
+    위도 :
+    <span id="lat"></span><br>
+    경도 :
+    <span id="long"></span>
     <div id="map"></div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+    <script src="./firebase.js"></script>
   </body>
 </html>
