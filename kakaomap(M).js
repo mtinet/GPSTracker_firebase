@@ -1,29 +1,28 @@
 // firebase 데이터 가져오기
 const database = firebase.database();
-var locationVal = database.ref('/gpsFirebase/bicycle_1')
+var locationVal = database.ref('/gpsFirebase')
 locationVal.on('value', gotData, errData);
 
 function gotData(data) {
-
   var data = data.val();
-  //var keys = Object.keys(data);
+  var keys = Object.keys(data);
 
-  //console.log(data);
-  //console.log(keys);
-  console.log(data.lat);
-  console.log(data.long);
+  console.log(data);
+  console.log(keys);
+  console.log(data.bicycle_1.lat);
+  console.log(data.bicycle_1.long);
 
-  var lat = data.lat;
-  var long = data.long;
+  var lat1 = data.bicycle_1.lat;
+  var long1 = data.bicycle_1.long;
 
 
-  document.getElementById("lat").innerHTML=lat;
-  document.getElementById("long").innerHTML=long;
+  document.getElementById("lat1").innerHTML=lat1;
+  document.getElementById("long1").innerHTML=long1;
 
 
   var mapContainer = document.getElementById('map'), // 지도를 표시할 div
       mapOption = {
-          center: new kakao.maps.LatLng(lat, long), // 지도의 중심좌표
+          center: new kakao.maps.LatLng(lat1, long1), // 지도의 중심좌표
           level: 4 // 지도의 확대 레벨
       };
 
@@ -33,7 +32,7 @@ function gotData(data) {
   var positions = [
       {
           title: '자전거 1',
-          latlng: new kakao.maps.LatLng(lat, long)
+          latlng: new kakao.maps.LatLng(lat1, long1)
       },
       {
           title: '자전거 2',
