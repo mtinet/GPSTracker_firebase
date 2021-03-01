@@ -5,16 +5,15 @@ locationVal.on('value', gotData, errData);
 
 function gotData(data) {
   var data = data.val();
-  var keys = Object.keys(data);
-
+  // var keys = Object.keys(data);
+  //
   console.log(data);
-  console.log(keys);
-  console.log(data.bicycle_1.lat);
-  console.log(data.bicycle_1.long);
+  // console.log(keys);
+  // console.log(data.bicycle_1.lat);
+  // console.log(data.bicycle_1.long);
 
   var lat1 = data.bicycle_1.lat;
   var long1 = data.bicycle_1.long;
-
 
   document.getElementById("lat1").innerHTML=lat1;
   document.getElementById("long1").innerHTML=long1;
