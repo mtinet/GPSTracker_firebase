@@ -24,7 +24,8 @@ firebase 접근
 * functions.js  
 javascript로 firebase를 제어하는 방법 예제  
 
-## 파일 설명(js파일과 연동해서 동작하며, 서버를 사용할 때만 제대로 동작하니 테스트를 할 때도 서버를 켜놓고 테스트 해야함)  
+## 파일 설명
+js파일과 연동해서 동작하며, 서버를 사용할 때만 제대로 동작하니 테스트를 할 때도 서버를 켜놓고 테스트 해야함  
 * google(GMP) : google map platform을 이용한 지도 표시(사용량에 따라 과금되며, 과금을 안하면 워터마크가 표시됨)  
 * index : firebase에서 가져온 위치 정보를 HTML에 표시함  
 * kakao : 카카오지도에 firebase에서 가져온 위치 정보를 표시함  
