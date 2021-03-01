@@ -1,13 +1,14 @@
 // firebase 데이터 가져오기
 const database = firebase.database();
-var locationVal = database.ref('/gpsFirebase')
+var locationVal = database.ref('/gpsFirebase/bicycle_1')
 locationVal.on('value', gotData, errData);
 
 function gotData(data) {
   var data = data.val();
   //var keys = Object.keys(data);
 
-  // console.log(data.val());
+  //console.log(data);
+  //console.log(keys);
   console.log(data.lat);
   console.log(data.long);
 

@@ -1,6 +1,6 @@
 // firebase 데이터 가져오기
 const database = firebase.database();
-var locationVal = database.ref('/gpsFirebase')
+var locationVal = database.ref('/gpsFirebase/bicycle_1')
 locationVal.on('value', gotData, errData);
 
 function gotData(data) {
@@ -8,7 +8,8 @@ function gotData(data) {
   var data = data.val();
   //var keys = Object.keys(data);
 
-  // console.log(data.val());
+  //console.log(data);
+  //console.log(keys);
   console.log(data.lat);
   console.log(data.long);
 
@@ -41,6 +42,10 @@ function gotData(data) {
       {
           title: '자전거 3',
           latlng: new kakao.maps.LatLng(37.644705917820576, 126.6669023524026)
+      },
+      {
+          title: '자전거 4',
+          latlng: new kakao.maps.LatLng(37.644905917820576, 126.6635023524026)
       }
   ];
 
