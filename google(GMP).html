@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Simple Map</title>
+    <title>자전거 트래킹</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH8zHcYDFmAuYQLXA3AwjF6KcZfJew_Fg&callback=initMap" defer></script>
     <style>
@@ -12,13 +11,23 @@
     </style>
     <script src="./google(GMP).js"></script>
   </head>
+
   <body>
     <h1> 현재위치를 확인하세요.</h1>
+    <h3> 자전거 1 </h3>
     위도 :
-    <span id="lat"></span><br>
+    <span id="lat1"></span><br>
     경도 :
-    <span id="long"></span>
+    <span id="long1"></span>
+    <p>
+    <h3> 자전거 2 </h3>
+    위도 :
+    <span id="lat2"></span><br>
+    경도 :
+    <span id="long2"></span>
+    <p>
     <div id="map"></div>
+
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
